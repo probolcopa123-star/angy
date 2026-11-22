@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos y Cronograma - Provincia Bolívar</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background-color: #F4EBE1;
+        color: #2C1A1D;
+        padding: 30px 15px;
+    }
+
+    .wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: #FFFFFF;
+        border-top: 6px solid #6B1D2F;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        padding: 40px;
+    }
+
+    .header-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px dashed #D3C0B0;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+    }
+
+    .header-box h1 {
+        font-size: 26px;
+        color: #6B1D2F;
+        font-family: Georgia, serif;
+        letter-spacing: 0.5px;
+    }
+
+    .header-box span {
+        font-size: 13px;
+        background-color: #6B1D2F;
+        color: #FFFFFF;
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+
+    .section-block {
+        margin-bottom: 30px;
+    }
+
+    .section-title {
+        font-size: 17px;
+        color: #6B1D2F;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .section-title::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background-color: #D3C0B0;
+    }
+
+    .text-content {
+        font-size: 14.5px;
+        line-height: 1.8;
+        color: #4A3B3D;
+    }
+
+    .cronograma {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    .cronograma th {
+        background-color: #6B1D2F;
+        color: white;
+        padding: 12px 15px;
+        text-align: left;
+        font-size: 13.5px;
+        text-transform: uppercase;
+    }
+
+    .cronograma td {
+        border-bottom: 1px solid #F0E6DD;
+        padding: 14px 15px;
+        vertical-align: top;
+        font-size: 13.5px;
+    }
+
+    .cronograma tr:nth-child(even) {
+        background-color: #FAF4EE;
+    }
+
+    .fecha {
+        font-weight: bold;
+        color: #6B1D2F;
+        white-space: nowrap;
+        width: 22%;
+    }
+
+    .actividad-titulo {
+        font-weight: bold;
+        color: #2C1A1D;
+        font-size: 14px;
+        margin-bottom: 4px;
+        display: block;
+    }
+
+    .resena-texto {
+        font-size: 12.5px;
+        color: #5A4B4D;
+        line-height: 1.5;
+        display: block;
+    }
+
+    .nav-footer {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 2px dashed #D3C0B0;
+        text-align: center;
+    }
+
+    .btn-redirect {
+        display: inline-block;
+        background-color: #6B1D2F;
+        color: #FFFFFF;
+        text-decoration: none;
+        padding: 12px 28px;
+        border-radius: 30px;
+        font-weight: bold;
+        font-size: 13.5px;
+        transition: all 0.2s ease;
+    }
+
+    .btn-redirect:hover {
+        background-color: #4A1320;
+        transform: scale(1.02);
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 25px;
+        font-size: 12.5px;
+        color: #7A6B6D;
+    }
+
+    @media (max-width: 650px) {
+        .wrapper { padding: 20px; }
+        .header-box { flex-direction: column; align-items: flex-start; gap: 10px; }
+        .fecha { width: 30%; }
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <header class="header-box">
+        <div>
+            <h1>Cronograma de Eventos</h1>
+            <p style="font-size: 13px; color: #7A6B6D; margin-top: 3px;">Unidad Educativa Fiscal Provincia de Bolívar</p>
+        </div>
+        <span>Período Lectivo</span>
+    </header>
+
+    <section class="section-block">
+        <h2 class="section-title">Fechas Cívicas y Reseñas Históricas</h2>
+        <p class="text-content">
+            A continuación se presenta el calendario institucional detallando el evento y la reseña correspondiente a cada fecha conmemorativa:
+        </p>
+
+        <table class="cronograma">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Evento y Reseña de la Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="fecha">4 de mayo</td>
+                    <td>
+                        <span class="actividad-titulo">Inicio del año lectivo</span>
+                        <span class="resena-texto">Jornada inaugural donde las autoridades educativas dan la bienvenida al estudiantado, marcando el comienzo del calendario académico oficial en el régimen Costa.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fecha">10 de mayo</td>
+                    <td>
+                        <span class="actividad-titulo">Día de la Madre</span>
+                        <span class="resena-texto">Jornada conmemorativa orientada a exaltar el rol fundamental de las madres dentro de la familia, fomentando la gratitud, el amor y los valores familiares en la comunidad educativa.</span>
+        
+
+</tr>
+                    <tr>
+ <td class="fecha">12 de mayo</td>
+<td>
+    <span class="actividad-titulo">Aniversario de Fundación del Colegio Provincia de Bolívar</span>
+    <span class="resena-texto">Celebración del aniversario de fundación de nuestra institución educativa, creada el 12 de mayo de 1975, recordando su trayectoria y aporte a la formación de generaciones de estudiantes.</span>
+</td>
+</tr>
+<tr>           </td>
+
+                </tr>
+                <tr>
+                    <td class="fecha">24 de mayo</td>
+                    <td>
+                        <span class="actividad-titulo">Conmemoración de la Batalla de Pichincha</span>
+                        <span class="resena-texto">En 1822, el ejército patriota al mando de Antonio José de Sucre venció a las tropas españolas en las faldas del volcán Pichincha, sello definitivo de la independencia de la Real Audiencia de Quito.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fecha">1 de junio</td>
+                    <td>
+                        <span class="actividad-titulo">Día del Niño</span>
+                        <span class="resena-texto">Instaurado por la Conferencia Mundial sobre el Bienestar del Niño en 1925, busca visibilizar los derechos, protección y bienestar integral de los niños en la sociedad.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fecha">21 de junio</td>
+                    <td>
+                        <span class="actividad-titulo">Día del Padre</span>
+                        <span class="resena-texto">Homenaje dedicado a reconocer el esfuerzo, guía y responsabilidad paterna en la crianza y formación de los estudiantes.</span>
+                    </td>
+               
+                </tr>
+                <tr>
+                    <td class="fecha">24 de julio</td>
+                    <td>
+                        <span class="actividad-titulo">Actividades por Fiestas Julianas</span>
+                        <span class="resena-texto">Apertura de la semana de homenajes a Guayaquil por el natalicio del Libertador Simón Bolívar (1783) y la trascendencia de la entrevista histórica de Guayaquil entre Bolívar y San Martín.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fecha">25 de julio</td>
+                    <td>
+                        <span class="actividad-titulo">Fundación de Santiago de Guayaquil</span>
+                        <span class="resena-texto">Conmemoración tradicional del asentamiento definitivo de Guayaquil liderado por Francisco de Orellana en 1538 a orillas del río Guayas, punto clave comercial e histórico.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fecha">10 de agosto</td>
+                    <td>
+                        <span class="actividad-titulo">Primer Grito de Independencia</span>
+                        <span class="resena-texto">Homenaje a la rebelión de 1809 donde los criollos conformaron la primera Junta Soberana de Gobierno en Quito, hito precursor de la libertad hispanoamericana.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fecha">5 de septiembre</td>
+                    <td>
+                        <span class="actividad-titulo">Olimpiadas Matutinas</span>
+                        <span class="resena-texto">Jornada dedicada a impulsar el espíritu competitivo de manera sana, promoviendo el deporte, el trabajo colaborativo y la actividad física dentro de la comunidad escolar.</span>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="fecha">25 de septiembre</td>
+                    <td>
+                        <span class="actividad-titulo">Juramento de la Bandera</span>
+                        <span class="resena-texto">Solemne acto educativo instituido para reafirmar el compromiso de civismo y respeto de los alumnos de último año de bachillerato hacia los símbolos patrios.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fecha">26 de septiembre</td>
+                    <td>
+                        <span class="actividad-titulo">Día de la Bandera Nacional</span>
+                        <span class="resena-texto">Establecido oficialmente en 1900 durante el gobierno de Eloy Alfaro para exaltar al tricolor ecuatoriano (amarillo, azul y rojo) como emblema de soberanía e identidad.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fecha">9 de octubre</td>
+                    <td>
+                        <span class="actividad-titulo">Independencia de Guayaquil</span>
+                        <span class="resena-texto">Gesta libertaria de 1820 encabezada por José Joaquín de Olmedo, deponiendo a las autoridades realistas y proclamando a Guayaquil como provincia libre.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fecha">25 de noviembre</td>
+                    <td>
+                        <span class="actividad-titulo">Eliminación de la Violencia contra la Mujer</span>
+                        <span class="resena-texto">Proclamado por la ONU en memoria de las hermanas Mirabal, asesinadas en 1960. La fecha promueve campañas educativas de prevención y concientización social.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fecha">1 al 24 de diciembre</td>
+                    <td>
+                        <span class="actividad-titulo">Jornadas Navideñas Institucionales</span>
+                        <span class="resena-texto">Días orientados al fortalecimiento de los lazos de fraternidad, solidaridad y respeto mutuo mediante villancicos, talleres artísticos y donaciones comunitarias.</span>
+                    </td>
+            </tbody>
+        </table>
+    </section>
+
+    <div class="nav-footer">
+        <a href="framesangy.html" target="_self" class="btn-redirect">&larr; VOLVER</a>
+    </div>
+
+</div>
+
+<footer>
+    &copy; Unidad Educativa Fiscal Provincia de Bolívar
+</footer>
+
+</body>
+
+</html>

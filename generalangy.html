@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información General - Provincia Bolívar</title>
+
+```
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background-color: #F4EBE1;
+        color: #2C1A1D;
+        padding: 30px 15px;
+    }
+
+    .wrapper {
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: #FFFFFF;
+        border-top: 6px solid #6B1D2F;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        padding: 40px;
+    }
+
+    .header-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px dashed #D3C0B0;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+    }
+
+    .header-box h1 {
+        font-size: 26px;
+        color: #6B1D2F;
+        font-family: Georgia, serif;
+        letter-spacing: 0.5px;
+    }
+
+    .header-box span {
+        font-size: 13px;
+        background-color: #6B1D2F;
+        color: #FFFFFF;
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+
+    .section-block {
+        margin-bottom: 35px;
+    }
+
+    .section-title {
+        font-size: 17px;
+        color: #6B1D2F;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .section-title::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background-color: #D3C0B0;
+    }
+
+    .text-content {
+        font-size: 14.5px;
+        line-height: 1.8;
+        color: #4A3B3D;
+    }
+
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    .data-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #F0E6DD;
+        font-size: 14px;
+    }
+
+    .data-table td.label-cell {
+        font-weight: bold;
+        color: #6B1D2F;
+        width: 30%;
+        background-color: #FAF4EE;
+    }
+
+    .block-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .custom-box {
+        background-color: #FAF4EE;
+        border-left: 4px solid #6B1D2F;
+        padding: 18px;
+    }
+
+    .custom-box h3 {
+        font-size: 15px;
+        color: #6B1D2F;
+        margin-bottom: 8px;
+    }
+
+    .custom-box p {
+        font-size: 13.5px;
+        line-height: 1.6;
+        color: #4A3B3D;
+    }
+
+    .news-box {
+        background-color: #FAF4EE;
+        border-left: 4px solid #6B1D2F;
+        padding: 18px 20px;
+        margin-top: 10px;
+        line-height: 1.7;
+    }
+
+    .news-box h3 {
+        color: #6B1D2F;
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .news-box p {
+        font-size: 14px;
+        color: #4A3B3D;
+        margin-bottom: 8px;
+    }
+
+    .news-box p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* VIDEO DE FACEBOOK */
+
+    .facebook-video {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .facebook-video iframe {
+        width: 100%;
+        max-width: 600px;
+        height: 500px;
+        border: none;
+        overflow: hidden;
+    }
+
+    .nav-footer {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 2px dashed #D3C0B0;
+        text-align: center;
+    }
+
+    .btn-redirect {
+        display: inline-block;
+        background-color: #6B1D2F;
+        color: #FFFFFF;
+        text-decoration: none;
+        padding: 12px 28px;
+        border-radius: 30px;
+        font-weight: bold;
+        font-size: 13.5px;
+        transition: all 0.2s ease;
+    }
+
+    .btn-redirect:hover {
+        background-color: #4A1320;
+        transform: scale(1.02);
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 25px;
+        font-size: 12.5px;
+        color: #7A6B6D;
+    }
+
+    @media (max-width: 650px) {
+
+        .wrapper {
+            padding: 20px;
+        }
+
+        .header-box {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .block-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .facebook-video iframe {
+            height: 450px;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<div class="wrapper">
+
+    <header class="header-box">
+
+        <div>
+
+            <h1>Unidad Educativa Fiscal Provincia Bolívar</h1>
+
+            <p style="font-size: 13px; color: #7A6B6D; margin-top: 3px;">
+                Sauces 5 &bull; Guayaquil, Ecuador
+            </p>
+
+        </div>
+
+        <span>AMIE 09H01372</span>
+
+    </header>
+
+
+    <section class="section-block">
+
+        <h2 class="section-title">
+            Nuestra Trayectoria
+        </h2>
+
+        <p class="text-content">
+
+            La institución inició sus labores educativas el 12 de mayo de 1975 bajo el Acuerdo Ministerial Nº 41B, liderada inicialmente por el rector Lcdo. Iván Pazmiño Jiménez. Pocos meses después, el 4 de julio del mismo año, la entidad consolidó su personería jurídica estatal tras la expedición del Decreto Presidencial suscrito por el Gral. Guillermo Rodríguez Lara (Registro Oficial 839).
+
+        </p>
+
+    </section>
+
+
+    <section class="section-block">
+
+        <h2 class="section-title">
+            Datos de Identificación
+        </h2>
+
+        <table class="data-table">
+
+            <tr>
+                <td class="label-cell">
+                    Nombre Institucional
+                </td>
+
+                <td>
+                    Unidad Educativa Fiscal Provincia Bolívar
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label-cell">
+                    Sostenimiento
+                </td>
+
+                <td>
+                    Fiscal / Sector Público
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label-cell">
+                    Ubicación Geográfica
+                </td>
+
+                <td>
+                    Guayaquil, Provincia del Guayas (Sauces 5)
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label-cell">
+                    Jornadas Lectivas
+                </td>
+
+                <td>
+                    Matutina &bull; Vespertina &bull; Nocturna
+                </td>
+            </tr>
+
+        </table>
+
+    </section>
+
+
+    <section class="section-block">
+
+        <h2 class="section-title">
+            Noticias Institucionales
+        </h2>
+
+        <div class="news-box">
+
+            <h3>
+                Finalización de pasantías de Tercero de Bachillerato
+            </h3>
+
+            <p>
+
+                Los estudiantes de
+                <strong>
+                    Tercero de Bachillerato de las especialidades de Informática y Contabilidad
+                </strong>
+                culminaron satisfactoriamente sus horas de pasantías preprofesionales en distintas entidades comunitarias e institucionales.
+
+            </p>
+
+            <p>
+
+                Todos los estudiantes lograron completar este proceso
+                <strong>
+                    sin ninguna novedad
+                </strong>,
+                cumpliendo de manera responsable con el plan de actividades establecido.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="section-block">
+
+        <h2 class="section-title">
+            Novedades Recientes
+        </h2>
+
+        <div class="news-box">
+
+            <h3>
+                Preparación para el Juramento de la Bandera
+            </h3>
+
+            <p>
+
+                Los estudiantes de los últimos años se encuentran preparando los detalles para la ceremonia solemne del
+                <strong>
+                    Juramento de la Bandera
+                </strong>,
+                realizando ensayos diarios de marcha y protocolo cívico.
+
+            </p>
+
+            <p>
+
+                Esta importante jornada cívica se llevará a cabo el
+                <strong>
+                    25 de septiembre
+                </strong>,
+                con la presencia de autoridades educativas y padres de familia.
+
+            </p>
+
+
+            <!-- VIDEO DE FACEBOOK -->
+
+            <div class="facebook-video">
+
+                <iframe
+                    src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2049281865719595&show_text=false"
+                    scrolling="no"
+                    frameborder="0"
+                    allowfullscreen="true"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="nav-footer">
+
+        <a href="framesangy.html"
+           target="_self"
+           class="btn-redirect">
+
+            &larr; VOLVER
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    &copy; Unidad Educativa Fiscal Provincia Bolívar
+
+</footer>
+```
+
+</body>
+
+</html>

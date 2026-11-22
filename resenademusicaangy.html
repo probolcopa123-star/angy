@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reseña de Música</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #D9D9D9;
+            font-family: Georgia, serif;
+            color: #4A0F18;
+        }
+
+        .contenedor {
+            width: 85%;
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 35px;
+            background-color: #F8F7EF;
+            border-top: 6px solid #4A0F18;
+            min-height: 90vh;
+        }
+
+        .encabezado {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px dashed #B8B2A8;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            gap: 15px;
+        }
+
+        h1 {
+            font-size: 30px;
+            color: #4A0F18;
+            margin: 0 0 8px 0;
+        }
+
+        .subtitulo {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .etiqueta {
+            background-color: #4A0F18;
+            color: white;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .referencia {
+            background-color: #F1EFE8;
+            border: 1px solid #D8D3C9;
+            border-left: 6px solid #4A0F18;
+            border-radius: 6px;
+            padding: 22px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+        }
+
+        .referencia h3 {
+            color: #4A0F18;
+            font-size: 21px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .referencia p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* PORTADA DE LAS CANCIONES */
+
+        .portada-link {
+            display: block;
+            width: 220px;
+            max-width: 100%;
+            margin: 25px auto 10px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .portada {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            transition: transform 0.3s ease;
+        }
+
+        .portada:hover {
+            transform: scale(1.04);
+        }
+
+        .texto-spotify {
+            display: block;
+            color: #4A0F18;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* BOTÓN DE LAS LETRAS */
+
+        .contenedor-letras {
+            text-align: center;
+            margin: 35px 0;
+        }
+
+        .boton-letras {
+            background-color: #4A0F18;
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: Georgia, serif;
+        }
+
+        .boton-letras:hover {
+            background-color: #7B1E2B;
+            transform: scale(1.04);
+        }
+
+        /* IMÁGENES DE LAS LETRAS */
+
+        .galeria-letras {
+            display: none;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .galeria-letras.mostrar {
+            display: block;
+        }
+
+        .galeria-letras img {
+            display: block;
+            width: 100%;
+            max-width: 650px;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.20);
+        }
+
+        /* BOTÓN REGRESAR */
+
+        .regresar {
+            display: inline-block;
+            background-color: #4A0F18;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .regresar:hover {
+            background-color: #7B1E2B;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 600px) {
+
+            .contenedor {
+                width: 95%;
+                padding: 20px;
+            }
+
+            .encabezado {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .referencia h3 {
+                font-size: 19px;
+            }
+
+            .referencia p {
+                font-size: 15px;
+            }
+
+            .portada-link {
+                width: 190px;
+            }
+
+            .boton-letras {
+                font-size: 14px;
+                padding: 12px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <div class="encabezado">
+
+            <div>
+                <h1>Reseña de Música</h1>
+
+                <div class="subtitulo">
+                    Unidad Educativa Fiscal Provincia de Bolívar
+                    — Guayaquil, Guayas
+                </div>
+            </div>
+
+            <div class="etiqueta">
+                MÚSICA
+            </div>
+
+        </div>
+
+        <!-- RESEÑA UNO -->
+
+        <div class="referencia">
+
+            <h3>Reseña uno: Disciplina y amor propio</h3>
+
+            <p>
+                La canción Disciplina y amor propio nos deja una enseñanza
+                muy bonita sobre la importancia de valorarnos, respetarnos
+                y esforzarnos por cumplir nuestras metas nos hace pensar
+                que debemos aprender a creer en nosotros mismos, mantenernos
+                constantes y no abandonar nuestros sueños cuando las cosas
+                se ponen difíciles. También nos recuerda que cuidarnos,
+                reconocer nuestro valor y tener confianza en nuestras
+                capacidades son partes importantes del amor propio, porque
+                no se trata de ser perfectos, sino de aprender cada día a
+                ser mejores personas.
+                En mi opinión, esta canción nos enseña
+                que la <u style="color: #b22222;">disciplina</u>, la
+                <u style="color: #b22222;">constancia</u> y el
+                <u style="color: #b22222;">respeto</u> hacia nosotros mismos
+                son importantes para alcanzar lo que queremos y construir
+                un buen futuro.
+            </p>
+
+            <a
+                href="https://open.spotify.com/track/1zHNSTjwwBb01xK8zuXENy?si=TlwU7kbgTPyS7o5XJO6QFA"
+                target="_blank"
+                class="portada-link"
+            >
+                <img
+                    src="https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e022f9f84b076c85b73055fb101"
+                    alt="Portada de Disciplina y Amor Propio - EuroBloke"
+                    class="portada"
+                >
+
+                <span class="texto-spotify">
+                    Escuchar canción en Spotify
+                </span>
+            </a>
+
+        </div>
+
+        <!-- RESEÑA DOS -->
+
+        <div class="referencia">
+
+            <h3>Reseña dos: Se perdieron los códigos</h3>
+
+            <p>
+                La canción Se perdieron los códigos habla sobre cómo se ha
+                ido perdiendo el respeto y los buenos valores en la sociedad.
+                Nos hace reflexionar sobre la importancia de respetar a los
+                mayores, cuidar a los niños, valorar a nuestra familia y
+                tratar bien a las demás personas, nos da a entender
+                que ser de la calle no significa ser agresivo o creerse más
+                que los demás, porque lo verdaderamente importante es la
+                educación que recibimos y los
+                <u style="color: #b22222;">valores</u> que demostramos con
+                nuestras acciones.
+                Mi opinión, esta canción deja una
+                enseñanza muy importante, ya que nos recuerda que la
+                <u style="color: #b22222;">lealtad</u>, la
+                <u style="color: #b22222;">humildad</u> y el
+                respeto nunca deberían perderse,
+                porque son valores que nos ayudan a ser mejores personas y
+                a convivir con los demás.
+            </p>
+
+            <a
+                href="https://open.spotify.com/track/3Zl0xIzd85nS5DHQxNFtDz?si=6bVTvFsgRxSfjc9hdFPqUQ"
+                target="_blank"
+                class="portada-link"
+            >
+                <img
+                    src="https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e021fbabaac6fb29bf9f72bee72"
+                    alt="Portada de Se Perdieron Los Códigos"
+                    class="portada"
+                >
+
+                <span class="texto-spotify">
+                    Escuchar canción en Spotify
+                </span>
+            </a>
+
+        </div>
+
+        <!-- ÚNICO BOTÓN DE LETRAS -->
+
+        <div class="contenedor-letras">
+
+            <button class="boton-letras" onclick="mostrarLetras()">
+                LETRAS DE LAS CANCIONES
+            </button>
+
+        </div>
+
+        <!-- IMÁGENES EN ORDEN DESCENDENTE -->
+
+        <div class="galeria-letras" id="galeriaLetras">
+
+            <img src="3.jpeg" alt="Letra 9">
+
+            <img src="8.jpeg" alt="Letra 8">
+
+            <img src="7.jpeg" alt="Letra 7">
+
+            <img src="6.jpeg" alt="Letra 6">
+
+            <img src="4.jpeg" alt="Letra 5">
+
+            <img src="5.jpeg" alt="Letra 4">
+
+            <img src="9.jpeg" alt="Letra 3">
+
+            <img src="2.jpeg" alt="Letra 2">
+
+            <img src="1.jpeg" alt="Letra 1">
+
+        </div>
+
+        <!-- BOTÓN REGRESAR -->
+
+        <a href="principalangy.html" class="regresar">
+            Regresar al Inicio
+        </a>
+
+    </div>
+
+    <script>
+
+        function mostrarLetras() {
+
+            document.getElementById("galeriaLetras")
+                .classList.toggle("mostrar");
+
+        }
+
+    </script>
+
+</body>
+
+</html>

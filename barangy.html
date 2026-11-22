@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Escolar - Unidad Educativa Fiscal Provincia Bolívar</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #F4EBE1;
+            color: #2C1A1D;
+            padding: 30px 15px;
+        }
+
+        .wrapper {
+            max-width: 900px;
+            margin: auto;
+            background: #FFFFFF;
+            border-top: 7px solid #6B1D2F;
+            box-shadow: 0 8px 25px rgba(44, 26, 29, 0.15);
+            padding: 40px;
+            animation: aparecer 0.8s ease;
+        }
+
+        /* APARICIÓN DE LA PÁGINA */
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        header h1 {
+            color: #6B1D2F;
+            font-size: 36px;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            color: #7A6B6D;
+            font-size: 16px;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 7px 18px;
+            border: 1px solid #6B1D2F;
+            color: #6B1D2F;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        .titulo-seccion {
+            color: #6B1D2F;
+            font-size: 24px;
+            margin-bottom: 18px;
+            border-bottom: 2px solid #E5D5C5;
+            padding-bottom: 8px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        /* TARJETAS */
+        .card {
+            background: #FAF4EE;
+            border: 1px solid #E5D5C5;
+            padding: 22px;
+            position: relative;
+            overflow: hidden;
+
+            opacity: 0;
+            transform: translateY(25px);
+
+            animation: subir 0.7s ease forwards;
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+        }
+
+        .card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.35s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes subir {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 25px rgba(44, 26, 29, 0.14);
+            border-color: #6B1D2F;
+        }
+
+        /* LÍNEA DECORATIVA */
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #6B1D2F;
+            transition: width 0.4s ease;
+        }
+
+        .card:hover::before {
+            width: 100%;
+        }
+
+        .card h3 {
+            color: #6B1D2F;
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+
+        .precio {
+            color: #6B1D2F;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .productos {
+            list-style: none;
+        }
+
+        .productos li {
+            color: #4A3B3D;
+            padding: 8px 0;
+            border-bottom: 1px dashed #D3C0B0;
+            transition:
+                padding-left 0.25s ease,
+                color 0.25s ease;
+        }
+
+        .productos li:last-child {
+            border-bottom: none;
+        }
+
+        .productos li::before {
+            content: "•";
+            color: #6B1D2F;
+            font-weight: bold;
+            margin-right: 8px;
+            transition: margin-right 0.25s ease;
+        }
+
+        .productos li:hover {
+            color: #6B1D2F;
+            padding-left: 6px;
+        }
+
+        .productos li:hover::before {
+            margin-right: 12px;
+        }
+
+        /* BEBIDAS Y FRUTAS */
+        .dos-columnas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        /* ESPECIAL DEL DÍA */
+        .especial {
+            background: #FAF4EE;
+            border: 2px solid #6B1D2F;
+            padding: 28px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+
+            animation: especialEntrada 0.9s ease 0.7s both;
+
+            transition:
+                box-shadow 0.4s ease,
+                transform 0.4s ease;
+        }
+
+        @keyframes especialEntrada {
+            from {
+                opacity: 0;
+                transform: scale(0.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .especial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(107, 29, 47, 0.16);
+        }
+
+        .especial::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: rgba(255,255,255,0.35);
+            transform: skewX(-20deg);
+            transition: left 0.8s ease;
+        }
+
+        .especial:hover::after {
+            left: 130%;
+        }
+
+        .especial h2 {
+            color: #6B1D2F;
+            font-size: 27px;
+            margin-bottom: 10px;
+        }
+
+        .especial h3 {
+            color: #4A3B3D;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .precio-especial {
+            display: inline-block;
+            color: #FFFFFF;
+            background: #6B1D2F;
+            padding: 9px 22px;
+            font-size: 21px;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .especial:hover .precio-especial {
+            transform: scale(1.06);
+        }
+
+        /* BOTÓN VOLVER */
+        .volver {
+            text-align: center;
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid #E5D5C5;
+        }
+
+        .volver a {
+            display: inline-block;
+            text-decoration: none;
+            color: #FFFFFF;
+            background: #6B1D2F;
+            padding: 12px 25px;
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .volver a:hover {
+            background: #4A1320;
+            transform: translateY(-3px);
+        }
+
+        .volver a span {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .volver a:hover span {
+            transform: translateX(-5px);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #7A6B6D;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 750px) {
+
+            .wrapper {
+                padding: 25px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dos-columnas {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 29px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <header>
+        <h1>Bar Escolar</h1>
+
+        <p>Unidad Educativa Fiscal Provincia Bolívar</p>
+
+        <div class="badge">
+            MENÚ ESCOLAR
+        </div>
+    </header>
+
+    <section>
+
+        <h2 class="titulo-seccion">
+            Opciones de Snacks
+        </h2>
+
+        <div class="menu-grid">
+
+            <div class="card">
+
+                <h3>Opciones Básicas</h3>
+
+                <div class="precio">
+                    $0.50
+                </div>
+
+                <ul class="productos">
+                    <li>Empanada</li>
+                    <li>Choripan</li>
+                    <li>Sanduches de Atún</li>
+                    <li>Tostadas</li>
+                    <li>Bolón</li>
+                    <li>Maduro con Queso</li>
+                    <li>Canguil</li>
+                    <li>Muchin</li>
+                    <li>Tortilla de Verde</li>
+                </ul>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Opciones Especiales</h3>
+
+                <div class="precio">
+                    $0.75
+                </div>
+
+                <ul class="productos">
+                    <li>Maduro Lampreado</li>
+                    <li>Salchipapas</li>
+                    <li>Corviche</li>
+                </ul>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Opciones fuertes </h3>
+
+                <div class="precio">
+                    $1.00
+                </div>
+
+                <ul class="productos">
+                    <li>Papi Pollo</li>
+                    <li>Pizza</li>
+                    <li>Hotdog</li>
+                    <li>Hamburguesa</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2 class="titulo-seccion">
+            Bebidas y Frutas
+        </h2>
+
+
+        <div class="dos-columnas">
+
+            <div class="card">
+
+                <h3>Bebidas</h3>
+
+                <div class="precio">
+                    $0.50
+                </div>
+
+                <ul class="productos">
+                    <li>Té</li>
+                    <li>Jugo de mora</li>
+                    <li>Jugo de naranja</li>
+                    <li>Agua</li>
+                    <li>Yogur</li>
+                    <li>Leche de chocolate (granizada)</li>
+                </ul>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Frutas</h3>
+
+                <div class="precio">
+                    $0.50
+                </div>
+
+                <ul class="productos">
+                    <li>Manzana</li>
+                    <li>Guineo</li>
+                    <li>Pera</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <h2 class="titulo-seccion">
+            Especial del Día
+        </h2>
+
+        <div class="especial">
+
+            <h2>TARRINAZO</h2>
+
+            <h3>
+                Combinado escolar completo
+            </h3>
+
+            <div class="precio-especial">
+                $1.25
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="volver">
+
+        <a href="framesangy.html">
+            <span>&larr;</span> VOLVER
+        </a>
+
+    </div>
+
+
+    <footer>
+        &copy; Unidad Educativa Fiscal Provincia Bolívar
+    </footer>
+
+</div>
+
+</body>
+</html>

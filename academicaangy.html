@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Académico y Clases Virtuales - UE Fiscal Provincia de Bolívar</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #F4EBE1;
+            color: #2C1A1D;
+            padding: 30px 15px;
+        }
+
+        .wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            border-top: 6px solid #6B1D2F;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+        }
+
+        .header-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px dashed #D3C0B0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header-box h1 {
+            font-size: 25px;
+            color: #6B1D2F;
+            font-family: Georgia, serif;
+            letter-spacing: 0.5px;
+        }
+
+        .header-box p {
+            font-size: 13px;
+            color: #7A6B6D;
+            margin-top: 4px;
+        }
+
+        .header-box span {
+            font-size: 13px;
+            background-color: #6B1D2F;
+            color: #FFFFFF;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .section-block {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 17px;
+            color: #6B1D2F;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: #D3C0B0;
+        }
+
+        .grade-list {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .grade-item {
+            flex: 1;
+            background-color: #FAF4EE;
+            border: 1px solid #E5D5C5;
+            padding: 15px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .grade-item h3 {
+            font-size: 22px;
+            color: #6B1D2F;
+        }
+
+        .grade-item p {
+            font-size: 12px;
+            color: #7A6B6D;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-top: 2px;
+        }
+
+        .spec-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .spec-card {
+            background-color: #FAF4EE;
+            padding: 20px;
+            border-left: 5px solid #6B1D2F;
+            border-radius: 4px;
+            border-top: 1px solid #E5D5C5;
+            border-right: 1px solid #E5D5C5;
+            border-bottom: 1px solid #E5D5C5;
+        }
+
+        .spec-card h3 {
+            font-size: 17px;
+            color: #6B1D2F;
+            margin-bottom: 8px;
+            font-family: Georgia, serif;
+        }
+
+        .spec-card p {
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: #4A3B3D;
+        }
+
+        .meet-card {
+            background-color: #FAF4EE;
+            border: 1px solid #E5D5C5;
+            border-left: 6px solid #6B1D2F;
+            padding: 25px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .meet-img {
+            width: 110px;
+            height: 110px;
+            object-fit: contain;
+            background-color: #FFFFFF;
+            border: 1px solid #E5D5C5;
+            border-radius: 8px;
+            padding: 10px;
+            flex-shrink: 0;
+        }
+
+        .meet-info {
+            flex: 1;
+        }
+
+        .meet-info h3 {
+            font-size: 20px;
+            color: #6B1D2F;
+            margin-bottom: 8px;
+            font-family: Georgia, serif;
+        }
+
+        .meet-info p {
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: #4A3B3D;
+            margin-bottom: 15px;
+        }
+
+        .btn-meet {
+            display: inline-block;
+            background-color: #6B1D2F;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-meet:hover {
+            background-color: #4A1320;
+        }
+
+        /* Tabla de Horarios Institucionales */
+        .schedule-table-container {
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #FAF4EE;
+            border: 1px solid #E5D5C5;
+            font-size: 13.5px;
+        }
+
+        .schedule-table th, 
+        .schedule-table td {
+            border: 1px solid #E5D5C5;
+            padding: 10px 14px;
+            text-align: left;
+        }
+
+        .schedule-table th {
+            background-color: #6B1D2F;
+            color: #FFFFFF;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12.5px;
+            letter-spacing: 0.5px;
+        }
+
+        .schedule-table .category-header {
+            background-color: #EFE4D8;
+            color: #6B1D2F;
+            font-weight: bold;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+
+        .schedule-table tr:hover {
+            background-color: #F3E9DF;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .info-card {
+            background-color: #FAF4EE;
+            border: 1px solid #E5D5C5;
+            border-left: 4px solid #6B1D2F;
+            padding: 18px;
+            border-radius: 4px;
+        }
+
+        .info-card h4 {
+            font-size: 15px;
+            color: #6B1D2F;
+            margin-bottom: 6px;
+        }
+
+        .info-card p {
+            font-size: 13px;
+            color: #4A3B3D;
+            line-height: 1.5;
+        }
+
+        .nav-footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px dashed #D3C0B0;
+            text-align: center;
+        }
+
+        .btn-redirect {
+            display: inline-block;
+            background-color: #6B1D2F;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 13.5px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-redirect:hover {
+            background-color: #4A1320;
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 12.5px;
+            color: #7A6B6D;
+        }
+
+        @media (max-width: 650px) {
+            .wrapper { padding: 20px; }
+            .header-box { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .grade-list { flex-direction: column; }
+            .meet-card { flex-direction: column; text-align: center; }
+            .meet-img { margin: 0 auto; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <header class="header-box">
+            <div>
+                <h1>Estructura Curricular y Plan de Contingencia Virtual</h1>
+                <p>Unidad Educativa Fiscal Provincia de Bolívar — Guayaquil, Guayas</p>
+            </div>
+            <span>Propuesta Académica</span>
+        </header>
+
+        <section class="section-block">
+            <h2 class="section-title">Básica Superior</h2>
+            <div class="grade-list">
+                <div class="grade-item">
+                    <h3>8.º</h3>
+                    <p>Año de EGB</p>
+                </div>
+                <div class="grade-item">
+                    <h3>9.º</h3>
+                    <p>Año de EGB</p>
+                </div>
+                <div class="grade-item">
+                    <h3>10.º</h3>
+                    <p>Año de EGB</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2 class="section-title">Especializaciones Técnicas (Bachillerato)</h2>
+            <div class="spec-container">
+                <div class="spec-card">
+                    <h3>Especialidad en Informática</h3>
+                    <p>
+                        Formación técnica orientada al diseño y administración de sistemas, soporte técnico informático, ensamblaje y mantenimiento de equipos informáticos, redes de computadoras, lógica de programación, bases de datos y desarrollo web.
+                    </p>
+                </div>
+                <div class="spec-card">
+                    <h3>Especialidad en Contabilidad</h3>
+                    <p>
+                        Instrucción práctica y teórica en el manejo de procesos contables, registros tributarios (SRI), elaboración de estados financieros, presupuestos, análisis de costes, nómina de empleados y gestión de inventarios para organizaciones públicas y privadas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2 class="section-title">Horario Oficial de Clases y Atención</h2>
+            <div class="schedule-table-container">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Jornada / Servicio</th>
+                            <th>Nivel / Área</th>
+                            <th>Horario de Atención / Clases</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" style="font-weight: bold; color: #6B1D2F;">Sección Matutina</td>
+                            <td>Básica Superior</td>
+                            <td>07:00 a 12:00</td>
+                        </tr>
+                        <tr>
+                            <td>Bachillerato</td>
+                            <td>07:00 a 12:50</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="font-weight: bold; color: #6B1D2F;">Sección Vespertina</td>
+                            <td>Básica Superior</td>
+                            <td>13:00 a 18:00</td>
+                        </tr>
+                        <tr>
+                            <td>Bachillerato</td>
+                            <td>13:00 a 18:30</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold; color: #6B1D2F;">Sección Nocturna</td>
+                            <td>General</td>
+                            <td>Entrada: 19:00 — Salida: 22:00</td>
+                        </tr>
+                        <tr class="category-header">
+                            <td colspan="3">Horarios de Atención Institucional</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;">Atención DECE</td>
+                            <td>Departamento de Consejería</td>
+                            <td>Lunes, Martes y Jueves: 10:00 a 14:00 pm</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold;">Secretaría</td>
+                            <td>Atención Administrativa</td>
+                            <td>Lunes, Martes y Jueves: 17:00 a 19:00 pm</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2" style="font-weight: bold;">Atención a Padres</td>
+                            <td>Jornada Matutina</td>
+                            <td>Martes: 12:50 a 13:30 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Jornada Vespertina</td>
+                            <td>Miércoles: 18:10 a 19:00 pm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2 class="section-title">Aulas Virtuales y Clases Asistidas — Google Meet</h2>
+            <div class="meet-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaTwslFcLEP9ZO1gGEXn9M3fXIGkAPAku6psxXR6wFoA&s=10" alt="Logo Google Meet" class="meet-img">
+                <div class="meet-info">
+                    <h3>Acceso Único a Clases Virtuales y Asistidas</h3>
+                    <p>
+                        Plataforma oficial para la realización de clases asistidas, acompañamiento pedagógico y clases virtuales de contingencia en caso de emergencias nacionales, suspensión presencial o disposiciones del Ministerio de Educación.
+                    </p>
+                    <a href="https://share.google/0cP4blAxR0UtO9I83" target="_blank" class="btn-meet">UNIRSE A LA CLASE EN GOOGLE MEET &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2 class="section-title">Protocolo para Clases Virtuales y Asistidas</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Plataforma Oficial</h4>
+                    <p>Google Meet se utilizará tanto para las clases asistidas de rutina como para las sesiones virtuales de emergencia.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Puntualidad y Conexión</h4>
+                    <p>Conéctate a la reunión de Google Meet al menos 5 minutos antes de la hora indicada en el horario dispuesto por el profesor.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Identificación Formal</h4>
+                    <p>Debes registrarte e ingresar con tu nombre y apellido completos para verificar tu asistencia de manera oficial.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Normas de Aula Virtual</h4>
+                    <p>Ingresa con el micrófono desactivado y activa tu cámara o participa activamente únicamente cuando el docente lo autorice.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="nav-footer">
+            <a href="framesangy.html" target="_self" class="btn-redirect">&larr; VOLVER </a>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; Unidad Educativa Fiscal Provincia de Bolívar — Todos los derechos reservados.
+    </footer>
+
+</body>
+
+</html>
