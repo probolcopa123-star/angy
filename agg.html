@@ -1,0 +1,265 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actividades Positivas</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: linear-gradient(135deg, #f3e5e5, #f8f3eb, #ead8dd);
+    color: #3b2029;
+    min-height: 100vh;
+    padding: 35px 15px;
+}
+
+/* RECUADRO PRINCIPAL */
+
+.contenedor {
+    width: 95%;
+    max-width: 1250px;
+    margin: auto;
+    padding: 30px;
+    background: rgba(255, 250, 247, .96);
+    border: 2px solid #d5b6bf;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(70, 20, 40, .15);
+}
+
+/* TITULO */
+
+.titulo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titulo h1 {
+    color: #641b2e;
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.decoracion {
+    width: 100px;
+    height: 4px;
+    margin: auto;
+    background: #a65c75;
+    border-radius: 10px;
+}
+
+/* GALERIA INTERACTIVA */
+
+.gallery {
+    display: flex;
+    width: 100%;
+    height: 440px;
+    gap: 12px;
+}
+
+.gallery figure {
+    position: relative;
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 2px solid #d6b7c1;
+    background: #641b2e;
+    transition: flex-grow .6s ease, box-shadow .4s ease;
+}
+
+/* EXPANSION DEL RECUADRO */
+
+.gallery figure:hover {
+    flex-grow: 5;
+    box-shadow: 0 5px 20px rgba(100, 27, 46, .25);
+}
+
+/* IMAGENES */
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    /* Evita acercar demasiado la imagen */
+    object-fit: contain;
+    object-position: center top;
+
+    opacity: .88;
+    transition: opacity .5s ease;
+}
+
+.gallery figure:hover img {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* TEXTO SOBRE LAS FOTOS */
+
+.gallery figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 18px;
+
+    color: white;
+
+    background: linear-gradient(
+        to top,
+        rgba(48, 9, 24, .96),
+        rgba(83, 23, 47, .65),
+        transparent
+    );
+
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity .5s ease, transform .5s ease;
+}
+
+.gallery figure:hover figcaption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery figcaption strong {
+    display: block;
+    font-size: 23px;
+    color: #fff1f5;
+    margin-bottom: 10px;
+}
+
+.gallery figcaption p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* DETALLE INFERIOR */
+
+.detalle {
+    margin-top: 22px;
+    text-align: center;
+    color: #895367;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* CELULARES */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 15px 8px;
+    }
+
+    .contenedor {
+        width: 100%;
+        padding: 18px 12px;
+        border-radius: 15px;
+    }
+
+    .titulo h1 {
+        font-size: 29px;
+    }
+
+    .gallery {
+        height: 380px;
+        gap: 6px;
+    }
+
+    .gallery figure:hover {
+        flex-grow: 5;
+    }
+
+    .gallery figcaption {
+        padding: 12px 8px;
+    }
+
+    .gallery figcaption strong {
+        font-size: 16px;
+    }
+
+    .gallery figcaption p {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+}
+
+/* REDUCIR MOVIMIENTO */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<main class="contenedor">
+
+    <div class="titulo">
+        <h1>Actividades Positivas</h1>
+        <div class="decoracion"></div>
+    </div>
+
+    <section class="gallery">
+
+        <figure>
+            <img src="y1.jpg" alt="Actividad solidaria">
+
+            <figcaption>
+                <strong>Solidaridad</strong>
+                <p>
+                    Realizamos actividades de apoyo y solidaridad,
+                    compartiendo con quienes más lo necesitan.
+                </p>
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="y2.jpg" alt="Cuidado del medio ambiente">
+
+            <figcaption>
+                <strong>Cuidado ambiental</strong>
+                <p>
+                    Participamos en actividades de siembra y cuidado
+                    de la naturaleza, contribuyendo a un entorno más bonito.
+                </p>
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img src="y3.jpg" alt="Entrega de donaciones">
+
+            <figcaption>
+                <strong>Generosidad</strong>
+                <p>
+                    Colaboramos con la entrega de donaciones,
+                    demostrando nuestro compromiso y apoyo a la comunidad.
+                </p>
+            </figcaption>
+        </figure>
+
+    </section>
+
+    <div class="detalle">
+        Unidad Educativa Fiscal Provincia de Bolívar
+    </div>
+
+</main>
+
+</body>
+</html>
+```
